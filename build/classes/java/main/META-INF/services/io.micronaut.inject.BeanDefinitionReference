@@ -1,0 +1,3 @@
+de.ksmwsk.deleteall.$EventListenerDefinitionClass
+de.ksmwsk.deleteall.$BookRepository$InterceptedDefinitionClass
+de.ksmwsk.deleteall.$BookDeleterDefinitionClass

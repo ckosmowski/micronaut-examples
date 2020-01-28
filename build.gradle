@@ -1,0 +1,56 @@
+plugins {
+    id 'java'
+}
+
+group 'de.ksmwsk'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    /* Micronaut core */
+    def micronautVersion = "1.3.0.RC1"
+    annotationProcessor platform("io.micronaut:micronaut-bom:$micronautVersion")
+    annotationProcessor "io.micronaut:micronaut-inject-java"
+    annotationProcessor 'io.micronaut.data:micronaut-data-processor'
+
+    implementation platform("io.micronaut:micronaut-bom:$micronautVersion")
+    implementation "io.micronaut:micronaut-inject"
+    implementation "io.micronaut:micronaut-runtime"
+    implementation "io.micronaut:micronaut-http-server-netty"
+    implementation "io.micronaut:micronaut-http-client"
+    implementation 'io.micronaut.data:micronaut-data-jdbc'
+    implementation 'io.micronaut.configuration:micronaut-flyway'
+    runtime 'io.micronaut.configuration:micronaut-jdbc-hikari:1.2.1'
+
+    /* Micronaut tests */
+    testAnnotationProcessor platform("io.micronaut:micronaut-bom:$micronautVersion")
+    testAnnotationProcessor "io.micronaut:micronaut-inject-java"
+    testImplementation "io.micronaut.test:micronaut-test-junit5"
+
+    runtimeOnly "ch.qos.logback:logback-classic:1.2.3"
+    testRuntime "ch.qos.logback:logback-classic:1.2.3"
+
+    runtime 'com.h2database:h2:1.4.197'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.4.2'
+    testImplementation "org.mockito:mockito-core:2.+"
+    testImplementation "org.mockito:mockito-junit-jupiter:2.27.5"
+    testImplementation "org.rnorth.visible-assertions:visible-assertions:2.1.2"
+    testImplementation "org.hamcrest:hamcrest:2.1"
+    testImplementation "org.assertj:assertj-core:3.12.2"
+    testImplementation 'javax.inject:javax.inject:1'
+
+    implementation 'javax.persistence:javax.persistence-api:2.2'
+
+    testCompile sourceSets.main.output
+
+}
+
+test {
+    useJUnitPlatform()
+}

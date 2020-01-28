@@ -1,6 +1,6 @@
 package de.ksmwsk.deleteall;
 
-import io.micronaut.data.annotation.EmbeddedId;
+import io.micronaut.data.annotation.Id;
 import io.micronaut.data.annotation.MappedEntity;
 import io.micronaut.data.model.naming.NamingStrategies;
 
@@ -10,23 +10,32 @@ import javax.persistence.Table;
 @Table(name="Book")
 public class Book {
 
-    @EmbeddedId
-    private BookId id;
+    @Id
+    private String hash;
+    private String name;
 
     private String author;
 
     public Book(){}
 
-    public Book(BookId id) {
-        this.id = id;
+    public Book(String hash) {
+        this.hash = hash;
     }
 
-    public BookId getId() {
-        return id;
+    public String getHash() {
+        return hash;
     }
 
-    public void setId(BookId id) {
-        this.id = id;
+    public void setHash(String hash) {
+        this.hash = hash;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getAuthor() {

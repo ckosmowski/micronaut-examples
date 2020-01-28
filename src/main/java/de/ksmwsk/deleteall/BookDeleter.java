@@ -35,8 +35,8 @@ public class BookDeleter  {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        Book book1 = new Book(new BookId("1", "In Search of Lost Time"));
-        Book book2 = new Book(new BookId("2", "Superfreakonomics"));
+        Book book1 = new Book("1");
+        Book book2 = new Book("2");
 
         List<Book> books = new ArrayList<>();
         books.add(book1);

@@ -5,5 +5,5 @@ import io.micronaut.data.model.query.builder.sql.Dialect;
 import io.micronaut.data.repository.CrudRepository;
 
 @JdbcRepository(dialect = Dialect.H2)
-public abstract class BookRepository implements CrudRepository<Book, BookId> {
+public abstract class BookRepository implements CrudRepository<Book, String> {
 }

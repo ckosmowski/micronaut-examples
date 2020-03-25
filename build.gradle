@@ -1,5 +1,7 @@
 plugins {
     id 'java'
+    id 'org.jetbrains.kotlin.jvm' version '1.3.71'
+    id "org.jetbrains.kotlin.kapt" version "1.3.71"
 }
 
 group 'de.ksmwsk'
@@ -13,23 +15,20 @@ repositories {
 
 dependencies {
     /* Micronaut core */
-    def micronautVersion = "1.3.0.RC1"
-    annotationProcessor platform("io.micronaut:micronaut-bom:$micronautVersion")
-    annotationProcessor "io.micronaut:micronaut-inject-java"
-    annotationProcessor 'io.micronaut.data:micronaut-data-processor'
+    def micronautVersion = "1.3.0"
+    kapt platform("io.micronaut:micronaut-bom:$micronautVersion")
+    kapt "io.micronaut:micronaut-inject-java"
+    kapt 'io.micronaut.data:micronaut-data-processor'
 
     implementation platform("io.micronaut:micronaut-bom:$micronautVersion")
     implementation "io.micronaut:micronaut-inject"
     implementation "io.micronaut:micronaut-runtime"
-    implementation "io.micronaut:micronaut-http-server-netty"
-    implementation "io.micronaut:micronaut-http-client"
-    implementation 'io.micronaut.data:micronaut-data-jdbc'
-    implementation 'io.micronaut.configuration:micronaut-flyway'
-    runtime 'io.micronaut.configuration:micronaut-jdbc-hikari:1.2.1'
 
     /* Micronaut tests */
-    testAnnotationProcessor platform("io.micronaut:micronaut-bom:$micronautVersion")
-    testAnnotationProcessor "io.micronaut:micronaut-inject-java"
+    kaptTest platform("io.micronaut:micronaut-bom:$micronautVersion")
+    kaptTest "io.micronaut:micronaut-inject-java"
+    testImplementation platform("io.micronaut:micronaut-bom:$micronautVersion")
+    testImplementation "io.micronaut:micronaut-inject"
     testImplementation "io.micronaut.test:micronaut-test-junit5"
 
     runtimeOnly "ch.qos.logback:logback-classic:1.2.3"
@@ -45,12 +44,24 @@ dependencies {
     testImplementation "org.assertj:assertj-core:3.12.2"
     testImplementation 'javax.inject:javax.inject:1'
 
-    implementation 'javax.persistence:javax.persistence-api:2.2'
-
-    testCompile sourceSets.main.output
-
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
 }
 
 test {
     useJUnitPlatform()
+}
+
+dependencies {
+    testCompile sourceSets.main.output
+}
+
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+compileTestKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
 }

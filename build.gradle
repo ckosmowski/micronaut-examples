@@ -15,7 +15,7 @@ repositories {
 
 dependencies {
     /* Micronaut core */
-    def micronautVersion = "1.3.0"
+    def micronautVersion = "2.0.0.RC2"
     kapt platform("io.micronaut:micronaut-bom:$micronautVersion")
     kapt "io.micronaut:micronaut-inject-java"
     kapt 'io.micronaut.data:micronaut-data-processor'

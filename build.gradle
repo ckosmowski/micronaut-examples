@@ -11,16 +11,24 @@ sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
+    maven { url "https://dl.bintray.com/micronaut/core-releases-local/" }
+    maven { url "http://fl-nexus3.rhenus.de:8081/repository/Snapshots" }
+    maven { url "http://fl-nexus3.rhenus.de:8081/repository/Releases" }
+    maven { url "http://fl-nexus3.rhenus.de:8081/repository/maven-central/" }
+    mavenCentral()
 }
 
 dependencies {
     /* Micronaut core */
-    def micronautVersion = "2.0.0.RC2"
+    def micronautVersion = "2.0.0"
     kapt platform("io.micronaut:micronaut-bom:$micronautVersion")
     kapt "io.micronaut:micronaut-inject-java"
     kapt 'io.micronaut.data:micronaut-data-processor'
 
-    implementation platform("io.micronaut:micronaut-bom:$micronautVersion")
+    implementation platform("io.micronaut:micronaut-bom:$micronautVersion") {
+        exclude group: 'io.micronaut.kafka', module: 'micronaut-kafka'
+    }
+    implementation "io.micronaut.kafka:micronaut-kafka:2.1.0"
     implementation "io.micronaut:micronaut-inject"
     implementation "io.micronaut:micronaut-runtime"
 

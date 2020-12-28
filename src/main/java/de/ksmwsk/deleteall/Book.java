@@ -4,36 +4,39 @@ import io.micronaut.data.annotation.EmbeddedId;
 import io.micronaut.data.annotation.MappedEntity;
 import io.micronaut.data.model.naming.NamingStrategies;
 
+import javax.persistence.Embedded;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @MappedEntity(namingStrategy = NamingStrategies.Raw.class)
 @Table(name="Book")
 public class Book {
 
-    @EmbeddedId
-    private BookId id;
+    @Id
+    private String id;
 
-    private String author;
+    @Embedded
+    private Author author;
 
     public Book(){}
 
-    public Book(BookId id) {
+    public Book(String id) {
         this.id = id;
     }
 
-    public BookId getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(BookId id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public String getAuthor() {
+    public Author getAuthor() {
         return author;
     }
 
-    public void setAuthor(String author) {
+    public void setAuthor(Author author) {
         this.author = author;
     }
 }

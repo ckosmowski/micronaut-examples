@@ -1,2 +1,3 @@
 # micronaut-data-deleteall
-Demonstrates batching issues with micronaut data deleteAll method
+Demonstrates issues with micronaut-data. is named deleteall, because the first issue demonstrated
+was related to the deleteall method

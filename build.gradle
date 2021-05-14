@@ -13,7 +13,7 @@ repositories {
 
 dependencies {
     /* Micronaut core */
-    def micronautVersion = "2.2.2"
+    def micronautVersion = "2.4.1"
     annotationProcessor platform("io.micronaut:micronaut-bom:$micronautVersion")
     annotationProcessor "io.micronaut:micronaut-inject-java"
     annotationProcessor 'io.micronaut.data:micronaut-data-processor'
@@ -44,6 +44,11 @@ dependencies {
     testImplementation "org.hamcrest:hamcrest:2.1"
     testImplementation "org.assertj:assertj-core:3.12.2"
     testImplementation 'javax.inject:javax.inject:1'
+
+    testImplementation 'ch.vorburger.mariaDB4j:mariaDB4j:2.4.0'
+    implementation 'ch.vorburger.mariaDB4j:mariaDB4j:2.4.0'
+
+    runtimeOnly "mysql:mysql-connector-java"
 
     implementation 'javax.persistence:javax.persistence-api:2.2'
 

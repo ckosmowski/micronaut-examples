@@ -7,6 +7,7 @@ import io.micronaut.data.model.naming.NamingStrategies;
 import javax.persistence.Embedded;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.time.LocalDateTime;
 
 @MappedEntity(namingStrategy = NamingStrategies.Raw.class)
 @Table(name="Book")
@@ -14,11 +15,6 @@ public class Book {
 
     @Id
     private String id;
-
-    @Embedded
-    private Author author;
-
-    public Book(){}
 
     public Book(String id) {
         this.id = id;
@@ -32,11 +28,4 @@ public class Book {
         this.id = id;
     }
 
-    public Author getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(Author author) {
-        this.author = author;
-    }
 }

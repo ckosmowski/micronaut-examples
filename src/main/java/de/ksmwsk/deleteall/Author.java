@@ -1,6 +1,7 @@
 package de.ksmwsk.deleteall;
 
 import io.micronaut.data.annotation.Embeddable;
+import io.micronaut.data.annotation.MappedEntity;
 
 @Embeddable
 public class Author {

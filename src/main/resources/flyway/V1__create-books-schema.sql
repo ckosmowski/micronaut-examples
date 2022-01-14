@@ -1,4 +1,5 @@
 DROP TABLE IF EXISTS `BOOK`;
 CREATE TABLE IF NOT EXISTS `BOOK` (
-  `id` VARCHAR(255) not null
+  `id` VARCHAR(255) not null,
+  `topic` VARCHAR(255) not null
 );

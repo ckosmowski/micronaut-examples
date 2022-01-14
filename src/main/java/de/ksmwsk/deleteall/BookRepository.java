@@ -8,5 +8,5 @@ import java.util.List;
 
 @JdbcRepository(dialect = Dialect.H2)
 public abstract class BookRepository implements CrudRepository<Book, String> {
-    abstract void updateByIdInList(List<String> ids, String topic);
+    abstract void updateByIdInList(List<String> id, String topic);
 }

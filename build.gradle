@@ -13,7 +13,7 @@ repositories {
 
 dependencies {
     /* Micronaut core */
-    def micronautVersion = "2.5.3"
+    def micronautVersion = "3.2.5"
     annotationProcessor platform("io.micronaut:micronaut-bom:$micronautVersion")
     annotationProcessor "io.micronaut:micronaut-inject-java"
     annotationProcessor 'io.micronaut.data:micronaut-data-processor'

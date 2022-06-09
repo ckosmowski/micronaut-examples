@@ -1,0 +1,3 @@
+mongodb:
+  uri: mongodb://dpx-micronaut-test:H6Nom6c1iEqbS2EJhScZreAd8vjT9Khp@dip.rhenus.de:37017/dpx-micronaut-test
+  database: dpx-micronaut-test

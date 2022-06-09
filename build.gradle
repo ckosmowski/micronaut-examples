@@ -15,19 +15,16 @@ repositories {
 
 dependencies {
     /* Micronaut core */
-    def micronautVersion = "3.4.4"
+    def micronautVersion = "3.5.1"
     kapt platform("io.micronaut:micronaut-bom:$micronautVersion")
     kapt "io.micronaut:micronaut-inject-java"
     kapt 'io.micronaut.data:micronaut-data-processor'
 
-    annotationProcessor("io.micronaut.data:micronaut-data-document-processor:3.4.1")
-    testAnnotationProcessor("io.micronaut.data:micronaut-data-document-processor:3.4.1")
+    kapt("io.micronaut.data:micronaut-data-document-processor:3.4.2")
+    kaptTest("io.micronaut.data:micronaut-data-document-processor:3.4.2")
 
-    kapt("io.micronaut.data:micronaut-data-document-processor:3.4.1")
-    kaptTest("io.micronaut.data:micronaut-data-document-processor:3.4.1")
-
-    implementation("io.micronaut.data:micronaut-data-mongodb:3.4.1")
-    testImplementation("io.micronaut.data:micronaut-data-mongodb:3.4.1")
+    implementation("io.micronaut.data:micronaut-data-mongodb:3.4.2")
+    testImplementation("io.micronaut.data:micronaut-data-mongodb:3.4.2")
 
     /* Micronaut tests */
     kaptTest platform("io.micronaut:micronaut-bom:$micronautVersion")

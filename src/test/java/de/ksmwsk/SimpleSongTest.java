@@ -1,6 +1,7 @@
 package de.ksmwsk;
 
 import de.ksmwsk.model.SongEntity;
+import de.ksmwsk.model.SubClass;
 import de.ksmwsk.repo.SongRepository;
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
 import jakarta.inject.Inject;
@@ -38,6 +39,7 @@ public class SimpleSongTest {
         SongEntity songEntity = new SongEntity();
         songEntity.setSongHash("song_2");
         songEntity.setName("Don't Worry, be happy");
+        songEntity.setSubClass(new SubClass());
 
         songRepository.update(songEntity); //invalid hexadecimal representation of an ObjectId: [song_2]
         final Optional<SongEntity> song2 = songRepository.findById("song_2");

@@ -2,8 +2,8 @@ plugins {
     id 'java'
     id "org.jetbrains.kotlin.kapt" version "1.7.0-RC"
     id 'org.jetbrains.kotlin.jvm' version '1.7.0-RC'
-    id 'io.micronaut.application' version '3.6.0'
-    id 'io.micronaut.test-resources' version '3.6.0'
+    id 'io.micronaut.application' version '3.7.9'
+    id 'io.micronaut.test-resources' version '3.7.9'
 }
 
 group 'de.ksmwsk'
@@ -17,8 +17,6 @@ repositories {
 
 dependencies {
     /* Micronaut core */
-    def micronautVersion = "3.9.1"
-    kapt platform("io.micronaut:micronaut-bom:$micronautVersion")
     kapt "io.micronaut:micronaut-inject-java"
     kapt 'io.micronaut.data:micronaut-data-processor'
 
@@ -31,9 +29,7 @@ dependencies {
     testImplementation("io.micronaut.data:micronaut-data-mongodb:3.10.0")
 
     /* Micronaut tests */
-    kaptTest platform("io.micronaut:micronaut-bom:$micronautVersion")
     kaptTest "io.micronaut:micronaut-inject-java"
-    testImplementation platform("io.micronaut:micronaut-bom:$micronautVersion")
     testImplementation "io.micronaut:micronaut-inject"
     testImplementation "io.micronaut.test:micronaut-test-junit5"
 

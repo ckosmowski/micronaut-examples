@@ -1,0 +1,1 @@
+mongo songdb --eval 'db.createCollection("songs")'

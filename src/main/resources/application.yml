@@ -1,3 +1,6 @@
 mongodb:
-  uri: ...
-  database: ...
+    servers:
+        default:
+            package-names: de.ksmwsk
+            uri: mongodb://${mongo.host}:${mongo.port}/songdb
+            database: songdb

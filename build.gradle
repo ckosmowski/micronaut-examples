@@ -2,6 +2,8 @@ plugins {
     id 'java'
     id "org.jetbrains.kotlin.kapt" version "1.7.0-RC"
     id 'org.jetbrains.kotlin.jvm' version '1.7.0-RC'
+    id 'io.micronaut.application' version '3.6.0'
+    id 'io.micronaut.test-resources' version '3.6.0'
 }
 
 group 'de.ksmwsk'
@@ -15,7 +17,7 @@ repositories {
 
 dependencies {
     /* Micronaut core */
-    def micronautVersion = "3.4.4"
+    def micronautVersion = "3.9.1"
     kapt platform("io.micronaut:micronaut-bom:$micronautVersion")
     kapt "io.micronaut:micronaut-inject-java"
     kapt 'io.micronaut.data:micronaut-data-processor'
@@ -23,11 +25,10 @@ dependencies {
     annotationProcessor("io.micronaut.data:micronaut-data-document-processor:3.4.1")
     testAnnotationProcessor("io.micronaut.data:micronaut-data-document-processor:3.4.1")
 
-    kapt("io.micronaut.data:micronaut-data-document-processor:3.4.1")
-    kaptTest("io.micronaut.data:micronaut-data-document-processor:3.4.1")
-
-    implementation("io.micronaut.data:micronaut-data-mongodb:3.4.1")
-    testImplementation("io.micronaut.data:micronaut-data-mongodb:3.4.1")
+    kapt("io.micronaut.data:micronaut-data-document-processor:3.10.0")
+    kaptTest("io.micronaut.data:micronaut-data-document-processor:3.10.0")
+    implementation("io.micronaut.data:micronaut-data-mongodb:3.10.0")
+    testImplementation("io.micronaut.data:micronaut-data-mongodb:3.10.0")
 
     /* Micronaut tests */
     kaptTest platform("io.micronaut:micronaut-bom:$micronautVersion")

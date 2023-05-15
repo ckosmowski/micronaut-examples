@@ -20,8 +20,8 @@ dependencies {
     kapt "io.micronaut:micronaut-inject-java"
     kapt 'io.micronaut.data:micronaut-data-processor'
 
-    annotationProcessor("io.micronaut.data:micronaut-data-document-processor:3.4.1")
-    testAnnotationProcessor("io.micronaut.data:micronaut-data-document-processor:3.4.1")
+    annotationProcessor("io.micronaut.data:micronaut-data-document-processor:3.10.0")
+    testAnnotationProcessor("io.micronaut.data:micronaut-data-document-processor:3.10.0")
 
     kapt("io.micronaut.data:micronaut-data-document-processor:3.10.0")
     kaptTest("io.micronaut.data:micronaut-data-document-processor:3.10.0")
@@ -31,6 +31,7 @@ dependencies {
     /* Micronaut tests */
     kaptTest "io.micronaut:micronaut-inject-java"
     testImplementation "io.micronaut:micronaut-inject"
+    implementation "jakarta.persistence:jakarta.persistence-api:3.0.0"
     testImplementation "io.micronaut.test:micronaut-test-junit5"
 
     runtimeOnly "ch.qos.logback:logback-classic:1.2.11"
@@ -43,7 +44,7 @@ dependencies {
     testImplementation "org.assertj:assertj-core:3.12.2"
     testImplementation 'javax.inject:javax.inject:1'
 
-    runtimeOnly("org.mongodb:mongodb-driver-sync:4.6.0")
+    runtimeOnly('org.mongodb:mongodb-driver-sync:4.9.0')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
 }
 

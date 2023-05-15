@@ -9,5 +9,6 @@ import io.micronaut.serde.annotation.Serdeable
 data class SongEntity (
     @field:Id
     var songHash: String? = null,
-    var name: String? = null
+    var name: String? = null,
+    var artist: Artist? = null
 )

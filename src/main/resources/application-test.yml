@@ -1,6 +1,7 @@
 test-resources:
   containers:
     mongodb:
+      image-name: mongo:4.2.8
       env:
         - MONGO_INITDB_DATABASE: songdb
       command:
@@ -11,5 +12,5 @@ test-resources:
       exposed-ports:
         - mongo.port: 27017
       copy-to-container:
-        - src/integrationTest/resources/mongo-init.js: /docker-entrypoint-initdb.d/mongo-init.js
-        - src/integrationTest/resources/mongo-init.sh: /docker-entrypoint-initdb.d/mongo-init.sh
+        - src/main/resources/mongo-init.js: /docker-entrypoint-initdb.d/mongo-init.js
+        - src/main/resources/mongo-init.sh: /docker-entrypoint-initdb.d/mongo-init.sh
